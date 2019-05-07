@@ -8,9 +8,11 @@ export function selectionSort(arr) {
         smallestIndex = j;
       }
     }
-    let small = arr[smallestIndex];
-    arr[smallestIndex] = arr[i];
-    arr[i] = small;
+    if (i !== smallestIndex) {
+      const small = arr[smallestIndex];
+      arr[smallestIndex] = arr[i];
+      arr[i] = small;
+    }
   }
   return arr;
 }
